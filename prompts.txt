@@ -1,0 +1,37 @@
+# AI Tool Prompts Used in Project Development
+
+1. Initial Project Setup
+- Created project structure with frontend (React + Vite) and backend (FastAPI)
+- Set up configuration files for both frontend and backend
+- Implemented basic project documentation
+
+2. Backend Development
+- Implemented FastAPI endpoints for ClickHouse connection and data operations
+- Created data models and validation using Pydantic
+- Implemented file handling and data conversion logic
+
+3. Frontend Development
+- Created React components for the user interface
+- Implemented state management and API integration
+- Added styling with Tailwind CSS
+- Implemented error handling and loading states
+
+4. Features Implemented
+- ClickHouse connection with JWT authentication
+- Table and column selection
+- Data preview functionality
+- File upload and download
+- Bidirectional data flow
+- Error handling and user feedback
+
+5. Testing and Documentation
+- Added test cases for data ingestion
+- Created comprehensive documentation
+- Added setup instructions
+
+The project was developed using AI assistance to:
+- Generate boilerplate code
+- Implement complex data handling logic
+- Create a responsive and user-friendly interface
+- Handle error cases and edge conditions
+- Optimize performance and code structure 
