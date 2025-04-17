@@ -5,6 +5,7 @@ import { Container, Box } from '@mui/material';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import DataIngestion from './pages/DataIngestion';
+import './App.css';
 
 const theme = createTheme({
   palette: {

@@ -1,12 +1,12 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 
-class ConnectionConfig(BaseModel):
+class ClickHouseConfig(BaseModel):
     host: str
     port: int
-    database: str
     user: str
-    password: Optional[str] = None
+    password: str
+    database: str
     secure: bool = False
     verify: bool = True
 
@@ -20,6 +20,29 @@ class ColumnInfo(BaseModel):
     type: str
     default_kind: Optional[str] = None
     default_expression: Optional[str] = None
+
+class JoinConditions(BaseModel):
+    tables: List[str]
+    type: str
+    keys: Dict[str, str]
+
+class ExportRequest(BaseModel):
+    table_name: str
+    columns: List[str]
+    query: Optional[str] = None
+    limit: Optional[int] = 100
+
+class Record(BaseModel):
+    id: int
+    price: float
+    date: str
+    postcode1: str
+
+class ExportResponse(BaseModel):
+    message: str
+    record_count: int
+    file_path: str
+    records: List[Dict[str, Any]]
 
 class QueryConfig(BaseModel):
     table_name: str
