@@ -2,6 +2,10 @@
 
 https://github.com/user-attachments/assets/eddae6fc-0740-40a4-8b15-f82ca04522af
 
+
+
+---
+
 # ClickHouse & Flat File Data Ingestion Tool
 
 A web-based application that facilitates bidirectional data ingestion between ClickHouse database and Flat Files.
@@ -18,50 +22,41 @@ A web-based application that facilitates bidirectional data ingestion between Cl
 ## Tech Stack
 
 ### Frontend
-- React + Vite
-- Tailwind CSS
+- React + Vite  
+- Tailwind CSS  
 - Axios for API calls
 
 ### Backend
-- FastAPI (Python)
-- ClickHouse-driver
-- Python JWT library
-- Pandas for data handling
+- FastAPI (Python)  
+- ClickHouse-driver  
+- Python JWT library  
+- Pandas for data handling  
+- Docker & Docker Compose
 
 ## Project Structure
 
 ```
 .
 ├── frontend/           # React + Vite frontend
-├── backend/           # FastAPI backend
-├── README.md         # Project documentation
-└── prompts.txt       # AI tool prompts used
+├── backend/            # FastAPI backend (Dockerized)
+├── docker-compose.yml  # Docker Compose configuration
+├── README.md           # Project documentation
+└── prompts.txt         # AI tool prompts used
 ```
 
 ## Setup Instructions
 
-### Backend Setup
+### Backend Setup (Dockerized)
 
-1. Navigate to the backend directory:
+1. Ensure Docker and Docker Compose are installed:
+   - [Download Docker](https://www.docker.com/get-started)
+
+2. From the root project directory, build and run the containers:
    ```bash
-   cd backend
+   docker-compose up --build
    ```
 
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Start the backend server:
-   ```bash
-   uvicorn main:app --reload
-   ```
+3. The FastAPI backend will be available at `http://localhost:8000`
 
 ### Frontend Setup
 
@@ -80,13 +75,14 @@ A web-based application that facilitates bidirectional data ingestion between Cl
    npm run dev
    ```
 
+4. Open your browser and navigate to `http://localhost:5173`
+
 ## Usage
 
-1. Open your browser and navigate to `http://localhost:5173`
-2. Select your data source (ClickHouse or Flat File)
-3. Configure connection parameters
-4. Select columns for ingestion
-5. Start the ingestion process
+1. Select your data source (ClickHouse or Flat File)  
+2. Configure connection parameters  
+3. Select columns for ingestion  
+4. Start the ingestion process  
 
 ## Testing
 
@@ -99,4 +95,5 @@ The application includes test cases for:
 
 ## License
 
-MIT 
+MIT
+
